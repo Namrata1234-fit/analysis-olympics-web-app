@@ -137,6 +137,10 @@ if user_menu == 'Athlete wise Analysis':
     st.title("Distribution of Age")
     st.plotly_chart(fig)
     
+    sport_list = df['Sport'].unique().tolist()
+    sport_list.sort()
+    sport_list.insert(0, 'Overall')
+    
     st.title("Height Vs Weight")
     selected_sport = st.selectbox('Select a Sport', sport_list)
     temp_df = helper.weight_v_height(df,selected_sport)
